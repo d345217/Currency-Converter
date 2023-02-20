@@ -11,6 +11,7 @@
         ListBox1.Items.Add("Usa")
         ListBox1.Items.Add("Euro")
         ListBox1.Items.Add("Poland")
+        ListBox1.Items.Add("China")
 
         ListBoxFrom.Items.Add("United Kingdom")
         ListBoxFrom.Items.Add("Ukraine")
