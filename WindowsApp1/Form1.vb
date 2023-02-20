@@ -6,12 +6,13 @@
     Dim AmountCross As Double
     Dim result As Double
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        ListBox1.Items.Add("United Kingdom")
-        ListBox1.Items.Add("Ukraine")
-        ListBox1.Items.Add("Usa")
-        ListBox1.Items.Add("Euro")
-        ListBox1.Items.Add("Poland")
-        ListBox1.Items.Add("China")
+        'For Design_1
+        'ListBox1.Items.Add("United Kingdom")
+        'ListBox1.Items.Add("Ukraine")
+        'ListBox1.Items.Add("Usa")
+        'ListBox1.Items.Add("Euro")
+        'ListBox1.Items.Add("Poland")
+
 
         ListBoxFrom.Items.Add("United Kingdom")
         ListBoxFrom.Items.Add("Ukraine")
@@ -26,31 +27,31 @@
         ListBoxTo.Items.Add("Poland")
     End Sub
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        If (ListBox1.SelectedItem = "United Kingdom") Then
-            ConversionRate = 1
-            TextBox2.Text = ConversionRate
-        End If
-        If (ListBox1.SelectedItem = "Ukraine") Then
-            ConversionRate = 45.08
-            TextBox2.Text = ConversionRate
-        End If
-        If (ListBox1.SelectedItem = "Usa") Then
-            ConversionRate = 1.23
-            TextBox2.Text = ConversionRate
-        End If
-        If (ListBox1.SelectedItem = "Euro") Then
-            ConversionRate = 1.13
-            TextBox2.Text = ConversionRate
-        End If
-        If (ListBox1.SelectedItem = "Poland") Then
-            ConversionRate = 5.3
-            TextBox2.Text = ConversionRate
-        End If
+    Private Sub Button1_Click(sender As Object, e As EventArgs)
+        'If (ListBox1.SelectedItem = "United Kingdom") Then
+        '    ConversionRate = 1
+        '    TextBox2.Text = ConversionRate
+        'End If
+        'If (ListBox1.SelectedItem = "Ukraine") Then
+        '    ConversionRate = 45.08
+        '    TextBox2.Text = ConversionRate
+        'End If
+        'If (ListBox1.SelectedItem = "Usa") Then
+        '    ConversionRate = 1.23
+        '    TextBox2.Text = ConversionRate
+        'End If
+        'If (ListBox1.SelectedItem = "Euro") Then
+        '    ConversionRate = 1.13
+        '    TextBox2.Text = ConversionRate
+        'End If
+        'If (ListBox1.SelectedItem = "Poland") Then
+        '    ConversionRate = 5.3
+        '    TextBox2.Text = ConversionRate
+        'End If
 
-        Amount = TextBox3.Text
-        Total = Amount * ConversionRate
-        TextBox4.Text = Total
+        'Amount = TextBox3.Text
+        'Total = Amount * ConversionRate
+        'TextBox4.Text = Total
     End Sub
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
@@ -72,8 +73,13 @@
                 ConversionRateCross = 8.52
             End If
 
-            Amount = TextBoxNew.Text
-            AmountCross = Amount * ConversionRateCross
+            If TextBoxNew.Text = "" Then
+                MsgBox("Enter the amount you want to convert")
+            Else
+                Amount = TextBoxNew.Text
+                AmountCross = Amount * ConversionRateCross
+            End If
+
 
             If ListBoxTo.SelectedItem = "United Kingdom" Then
                 ConversionRate = 0.022
