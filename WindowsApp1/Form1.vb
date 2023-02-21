@@ -57,6 +57,7 @@
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
 
         If ListBoxTo.SelectedItem <> ListBoxFrom.SelectedItem Then
+
             If ListBoxFrom.SelectedItem = "United Kingdom" Then
                 ConversionRateCross = 45.65
             End If
@@ -80,7 +81,6 @@
                 AmountCross = Amount * ConversionRateCross
             End If
 
-
             If ListBoxTo.SelectedItem = "United Kingdom" Then
                 ConversionRate = 0.022
             End If
@@ -99,7 +99,6 @@
 
             result = AmountCross * ConversionRate
             TextBoxResult.Text = result
-
         Else
             TextBoxResult.Text = TextBoxNew.Text
         End If

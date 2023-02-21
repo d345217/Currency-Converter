@@ -31,6 +31,7 @@ Partial Class Form1
         Me.Label7 = New System.Windows.Forms.Label()
         Me.TextBoxNew = New System.Windows.Forms.TextBox()
         Me.TextBoxResult = New System.Windows.Forms.TextBox()
+        Me.Label1 = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'Label4
@@ -110,11 +111,22 @@ Partial Class Form1
         Me.TextBoxResult.Size = New System.Drawing.Size(100, 20)
         Me.TextBoxResult.TabIndex = 17
         '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Location = New System.Drawing.Point(275, 69)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(238, 29)
+        Me.Label1.TabIndex = 18
+        Me.Label1.Text = "Currency Exchange"
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.TextBoxResult)
         Me.Controls.Add(Me.Label7)
         Me.Controls.Add(Me.TextBoxNew)
@@ -139,4 +151,5 @@ Partial Class Form1
     Friend WithEvents Label7 As Label
     Friend WithEvents TextBoxNew As TextBox
     Friend WithEvents TextBoxResult As TextBox
+    Friend WithEvents Label1 As Label
 End Class
