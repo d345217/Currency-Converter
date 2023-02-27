@@ -55,7 +55,6 @@
     End Sub
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
-
         If ListBoxTo.SelectedItem <> ListBoxFrom.SelectedItem Then
 
             If ListBoxFrom.SelectedItem = "United Kingdom" Then
@@ -77,9 +76,14 @@
             If TextBoxNew.Text = "" Then
                 MsgBox("Enter the amount you want to convert")
             Else
-                Amount = TextBoxNew.Text
-                AmountCross = Amount * ConversionRateCross
+                Try
+                    Amount = TextBoxNew.Text
+                    AmountCross = Amount * ConversionRateCross
+                Catch
+                    MsgBox("Enter valid amount")
+                End Try
             End If
+
 
             If ListBoxTo.SelectedItem = "United Kingdom" Then
                 ConversionRate = 0.022
@@ -97,10 +101,12 @@
                 ConversionRate = 0.12
             End If
 
+
             result = AmountCross * ConversionRate
             TextBoxResult.Text = result
         Else
             TextBoxResult.Text = TextBoxNew.Text
         End If
+
     End Sub
 End Class
