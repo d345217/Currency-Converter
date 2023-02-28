@@ -22,6 +22,7 @@ Partial Class Form1
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.ListBoxFrom = New System.Windows.Forms.ListBox()
         Me.ListBoxTo = New System.Windows.Forms.ListBox()
@@ -32,6 +33,15 @@ Partial Class Form1
         Me.TextBoxNew = New System.Windows.Forms.TextBox()
         Me.TextBoxResult = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.lstRecords = New System.Windows.Forms.ListBox()
+        Me.BindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
+        Me.ForAss2DataSet = New WindowsApp1.ForAss2DataSet()
+        Me.TblRecordBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.TblRecordTableAdapter = New WindowsApp1.ForAss2DataSetTableAdapters.tblRecordTableAdapter()
+        Me.TextBoxRate = New System.Windows.Forms.TextBox()
+        CType(Me.BindingSource1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.ForAss2DataSet, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.TblRecordBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Label4
@@ -121,11 +131,49 @@ Partial Class Form1
         Me.Label1.TabIndex = 18
         Me.Label1.Text = "Currency Exchange"
         '
+        'lstRecords
+        '
+        Me.lstRecords.DataSource = Me.TblRecordBindingSource
+        Me.lstRecords.DisplayMember = "Amount"
+        Me.lstRecords.FormattingEnabled = True
+        Me.lstRecords.Location = New System.Drawing.Point(637, 103)
+        Me.lstRecords.Name = "lstRecords"
+        Me.lstRecords.Size = New System.Drawing.Size(120, 95)
+        Me.lstRecords.TabIndex = 19
+        '
+        'BindingSource1
+        '
+        Me.BindingSource1.DataSource = Me.ForAss2DataSet
+        Me.BindingSource1.Position = 0
+        '
+        'ForAss2DataSet
+        '
+        Me.ForAss2DataSet.DataSetName = "ForAss2DataSet"
+        Me.ForAss2DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'TblRecordBindingSource
+        '
+        Me.TblRecordBindingSource.DataMember = "tblRecord"
+        Me.TblRecordBindingSource.DataSource = Me.BindingSource1
+        '
+        'TblRecordTableAdapter
+        '
+        Me.TblRecordTableAdapter.ClearBeforeFill = True
+        '
+        'TextBoxRate
+        '
+        Me.TextBoxRate.Location = New System.Drawing.Point(343, 312)
+        Me.TextBoxRate.Name = "TextBoxRate"
+        Me.TextBoxRate.Size = New System.Drawing.Size(100, 20)
+        Me.TextBoxRate.TabIndex = 20
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.Controls.Add(Me.TextBoxRate)
+        Me.Controls.Add(Me.lstRecords)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.TextBoxResult)
         Me.Controls.Add(Me.Label7)
@@ -138,6 +186,9 @@ Partial Class Form1
         Me.Controls.Add(Me.Label4)
         Me.Name = "Form1"
         Me.Text = "Form1"
+        CType(Me.BindingSource1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.ForAss2DataSet, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.TblRecordBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -152,4 +203,10 @@ Partial Class Form1
     Friend WithEvents TextBoxNew As TextBox
     Friend WithEvents TextBoxResult As TextBox
     Friend WithEvents Label1 As Label
+    Friend WithEvents lstRecords As ListBox
+    Friend WithEvents BindingSource1 As BindingSource
+    Friend WithEvents ForAss2DataSet As ForAss2DataSet
+    Friend WithEvents TblRecordBindingSource As BindingSource
+    Friend WithEvents TblRecordTableAdapter As ForAss2DataSetTableAdapters.tblRecordTableAdapter
+    Friend WithEvents TextBoxRate As TextBox
 End Class

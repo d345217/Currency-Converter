@@ -6,6 +6,8 @@
     Dim AmountCross As Double
     Dim result As Double
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        'TODO: This line of code loads data into the 'ForAss2DataSet.tblRecord' table. You can move, or remove it, as needed.
+        Me.TblRecordTableAdapter.Fill(Me.ForAss2DataSet.tblRecord)
         'For Design_1
         'ListBox1.Items.Add("United Kingdom")
         'ListBox1.Items.Add("Ukraine")
@@ -104,9 +106,14 @@
 
             result = AmountCross * ConversionRate
             TextBoxResult.Text = result
+            TextBoxRate.Text = result / Amount
         Else
             TextBoxResult.Text = TextBoxNew.Text
+            TextBoxRate.Text = result / Amount
         End If
 
+
+        Dim anyRow As DataRow = Me.ForAss2DataSet.tblRecord.NewRow
+        anyRow("Currency") = ""
     End Sub
 End Class
