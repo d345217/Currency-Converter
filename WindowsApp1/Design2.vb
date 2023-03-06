@@ -88,7 +88,6 @@
                 End Try
             End If
 
-
             If ListBoxTo.SelectedItem = "United Kingdom" Then
                 ConversionRate = 0.022
             End If
