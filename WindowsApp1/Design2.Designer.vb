@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class Form1
+Partial Class Design2
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
@@ -30,25 +30,27 @@ Partial Class Form1
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Label7 = New System.Windows.Forms.Label()
-        Me.TextBoxNew = New System.Windows.Forms.TextBox()
-        Me.TextBoxResult = New System.Windows.Forms.TextBox()
+        Me.txtAmount = New System.Windows.Forms.TextBox()
+        Me.txtResult = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.lstRecords = New System.Windows.Forms.ListBox()
+        Me.TblRecordBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.BindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
         Me.ForAss2DataSet = New WindowsApp1.ForAss2DataSet()
-        Me.TblRecordBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.TblRecordTableAdapter = New WindowsApp1.ForAss2DataSetTableAdapters.tblRecordTableAdapter()
-        Me.TextBoxRate = New System.Windows.Forms.TextBox()
+        Me.lstEntries = New System.Windows.Forms.ListBox()
+        Me.txtCurrency = New System.Windows.Forms.TextBox()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.btnSave = New System.Windows.Forms.Button()
+        CType(Me.TblRecordBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.BindingSource1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ForAss2DataSet, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.TblRecordBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Label4
         '
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(294, 273)
+        Me.Label4.Location = New System.Drawing.Point(294, 380)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(36, 13)
         Me.Label4.TabIndex = 8
@@ -73,7 +75,7 @@ Partial Class Form1
         'Button2
         '
         Me.Button2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button2.Location = New System.Drawing.Point(471, 268)
+        Me.Button2.Location = New System.Drawing.Point(471, 375)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(75, 23)
         Me.Button2.TabIndex = 12
@@ -101,25 +103,27 @@ Partial Class Form1
         'Label7
         '
         Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(294, 230)
+        Me.Label7.Location = New System.Drawing.Point(294, 337)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(43, 13)
         Me.Label7.TabIndex = 16
         Me.Label7.Text = "Amount"
         '
-        'TextBoxNew
+        'txtAmount
         '
-        Me.TextBoxNew.Location = New System.Drawing.Point(343, 226)
-        Me.TextBoxNew.Name = "TextBoxNew"
-        Me.TextBoxNew.Size = New System.Drawing.Size(100, 20)
-        Me.TextBoxNew.TabIndex = 15
+        Me.txtAmount.Location = New System.Drawing.Point(343, 333)
+        Me.txtAmount.Name = "txtAmount"
+        Me.txtAmount.Size = New System.Drawing.Size(100, 20)
+        Me.txtAmount.TabIndex = 15
         '
-        'TextBoxResult
+        'txtResult
         '
-        Me.TextBoxResult.Location = New System.Drawing.Point(343, 269)
-        Me.TextBoxResult.Name = "TextBoxResult"
-        Me.TextBoxResult.Size = New System.Drawing.Size(100, 20)
-        Me.TextBoxResult.TabIndex = 17
+        Me.txtResult.Enabled = False
+        Me.txtResult.Location = New System.Drawing.Point(343, 376)
+        Me.txtResult.Name = "txtResult"
+        Me.txtResult.ReadOnly = True
+        Me.txtResult.Size = New System.Drawing.Size(100, 20)
+        Me.txtResult.TabIndex = 17
         '
         'Label1
         '
@@ -131,15 +135,10 @@ Partial Class Form1
         Me.Label1.TabIndex = 18
         Me.Label1.Text = "Currency Exchange"
         '
-        'lstRecords
+        'TblRecordBindingSource
         '
-        Me.lstRecords.DataSource = Me.TblRecordBindingSource
-        Me.lstRecords.DisplayMember = "Amount"
-        Me.lstRecords.FormattingEnabled = True
-        Me.lstRecords.Location = New System.Drawing.Point(637, 103)
-        Me.lstRecords.Name = "lstRecords"
-        Me.lstRecords.Size = New System.Drawing.Size(120, 95)
-        Me.lstRecords.TabIndex = 19
+        Me.TblRecordBindingSource.DataMember = "tblRecord"
+        Me.TblRecordBindingSource.DataSource = Me.BindingSource1
         '
         'BindingSource1
         '
@@ -151,33 +150,58 @@ Partial Class Form1
         Me.ForAss2DataSet.DataSetName = "ForAss2DataSet"
         Me.ForAss2DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
-        'TblRecordBindingSource
-        '
-        Me.TblRecordBindingSource.DataMember = "tblRecord"
-        Me.TblRecordBindingSource.DataSource = Me.BindingSource1
-        '
         'TblRecordTableAdapter
         '
         Me.TblRecordTableAdapter.ClearBeforeFill = True
         '
-        'TextBoxRate
+        'lstEntries
         '
-        Me.TextBoxRate.Location = New System.Drawing.Point(343, 312)
-        Me.TextBoxRate.Name = "TextBoxRate"
-        Me.TextBoxRate.Size = New System.Drawing.Size(100, 20)
-        Me.TextBoxRate.TabIndex = 20
+        Me.lstEntries.FormattingEnabled = True
+        Me.lstEntries.Location = New System.Drawing.Point(650, 69)
+        Me.lstEntries.Name = "lstEntries"
+        Me.lstEntries.Size = New System.Drawing.Size(120, 134)
+        Me.lstEntries.TabIndex = 19
+        '
+        'txtCurrency
+        '
+        Me.txtCurrency.Enabled = False
+        Me.txtCurrency.Location = New System.Drawing.Point(343, 291)
+        Me.txtCurrency.Name = "txtCurrency"
+        Me.txtCurrency.ReadOnly = True
+        Me.txtCurrency.Size = New System.Drawing.Size(100, 20)
+        Me.txtCurrency.TabIndex = 20
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Location = New System.Drawing.Point(288, 294)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(49, 13)
+        Me.Label2.TabIndex = 21
+        Me.Label2.Text = "Currency"
+        '
+        'btnSave
+        '
+        Me.btnSave.Location = New System.Drawing.Point(471, 329)
+        Me.btnSave.Name = "btnSave"
+        Me.btnSave.Size = New System.Drawing.Size(75, 23)
+        Me.btnSave.TabIndex = 22
+        Me.btnSave.Text = "Save"
+        Me.btnSave.UseVisualStyleBackColor = True
         '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(800, 450)
-        Me.Controls.Add(Me.TextBoxRate)
-        Me.Controls.Add(Me.lstRecords)
+        Me.Controls.Add(Me.btnSave)
+        Me.Controls.Add(Me.Label2)
+        Me.Controls.Add(Me.txtCurrency)
+        Me.Controls.Add(Me.lstEntries)
         Me.Controls.Add(Me.Label1)
-        Me.Controls.Add(Me.TextBoxResult)
+        Me.Controls.Add(Me.txtResult)
         Me.Controls.Add(Me.Label7)
-        Me.Controls.Add(Me.TextBoxNew)
+        Me.Controls.Add(Me.txtAmount)
         Me.Controls.Add(Me.Label6)
         Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.Button2)
@@ -186,9 +210,9 @@ Partial Class Form1
         Me.Controls.Add(Me.Label4)
         Me.Name = "Form1"
         Me.Text = "Form1"
+        CType(Me.TblRecordBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.BindingSource1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ForAss2DataSet, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.TblRecordBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -200,13 +224,15 @@ Partial Class Form1
     Friend WithEvents Label5 As Label
     Friend WithEvents Label6 As Label
     Friend WithEvents Label7 As Label
-    Friend WithEvents TextBoxNew As TextBox
-    Friend WithEvents TextBoxResult As TextBox
+    Friend WithEvents txtAmount As TextBox
+    Friend WithEvents txtResult As TextBox
     Friend WithEvents Label1 As Label
-    Friend WithEvents lstRecords As ListBox
     Friend WithEvents BindingSource1 As BindingSource
     Friend WithEvents ForAss2DataSet As ForAss2DataSet
     Friend WithEvents TblRecordBindingSource As BindingSource
     Friend WithEvents TblRecordTableAdapter As ForAss2DataSetTableAdapters.tblRecordTableAdapter
-    Friend WithEvents TextBoxRate As TextBox
+    Friend WithEvents lstEntries As ListBox
+    Friend WithEvents txtCurrency As TextBox
+    Friend WithEvents Label2 As Label
+    Friend WithEvents btnSave As Button
 End Class

@@ -1,20 +1,21 @@
-﻿Public Class Form1
-    Dim ConversionRate As Double
-    Dim ConversionRateCross As Double
+﻿Public Class Design2
     Dim Amount As Double
-    Dim Total As Double
+    Dim ConversionRate As Double
     Dim AmountCross As Double
-    Dim result As Double
+    Dim ConversionRateCross As Double
+
+    Dim Result As Double
+    Dim Currency As Decimal
+
+    'For Design 1
+    'Dim Total As Double
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        'TODO: This line of code loads data into the 'ForAss2DataSet.tblRecord' table. You can move, or remove it, as needed.
-        Me.TblRecordTableAdapter.Fill(Me.ForAss2DataSet.tblRecord)
         'For Design_1
         'ListBox1.Items.Add("United Kingdom")
         'ListBox1.Items.Add("Ukraine")
         'ListBox1.Items.Add("Usa")
         'ListBox1.Items.Add("Euro")
         'ListBox1.Items.Add("Poland")
-
 
         ListBoxFrom.Items.Add("United Kingdom")
         ListBoxFrom.Items.Add("Ukraine")
@@ -30,6 +31,7 @@
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs)
+        'For Design 1
         'If (ListBox1.SelectedItem = "United Kingdom") Then
         '    ConversionRate = 1
         '    TextBox2.Text = ConversionRate
@@ -75,11 +77,11 @@
                 ConversionRateCross = 8.52
             End If
 
-            If TextBoxNew.Text = "" Then
+            If txtAmount.Text = "" Then
                 MsgBox("Enter the amount you want to convert")
             Else
                 Try
-                    Amount = TextBoxNew.Text
+                    Amount = txtAmount.Text
                     AmountCross = Amount * ConversionRateCross
                 Catch
                     MsgBox("Enter valid amount")
@@ -104,16 +106,24 @@
             End If
 
 
-            result = AmountCross * ConversionRate
-            TextBoxResult.Text = result
-            TextBoxRate.Text = result / Amount
+            Result = AmountCross * ConversionRate
+            txtResult.Text = Result
         Else
-            TextBoxResult.Text = TextBoxNew.Text
-            TextBoxRate.Text = result / Amount
+            txtResult.Text = txtAmount.Text
         End If
 
+        Currency = Result / Amount
+        txtCurrency.Text = Math.Round(Currency, 2)
 
-        Dim anyRow As DataRow = Me.ForAss2DataSet.tblRecord.NewRow
-        anyRow("Currency") = ""
+        Dim lines() As String = IO.File.ReadAllLines("C:\Users\11155882\source\repos\WindowsApp1\WindowsApp1\output.txt")
+        lstEntries.Items.AddRange(lines)
+    End Sub
+
+    Private Sub btnSave_Click(sender As Object, e As EventArgs) Handles btnSave.Click
+        lstEntries.Items.Add(txtAmount.Text + " " + txtCurrency.Text)
+        Dim file As System.IO.StreamWriter
+        file = My.Computer.FileSystem.OpenTextFileWriter("C:\Users\11155882\source\repos\WindowsApp1\WindowsApp1\output.txt", True)
+        file.WriteLine(txtCurrency.Text + " " + txtAmount.Text)
+        file.Close()
     End Sub
 End Class
