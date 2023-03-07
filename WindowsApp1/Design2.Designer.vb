@@ -24,9 +24,9 @@ Partial Class Design2
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Me.Label4 = New System.Windows.Forms.Label()
-        Me.ListBoxFrom = New System.Windows.Forms.ListBox()
-        Me.ListBoxTo = New System.Windows.Forms.ListBox()
-        Me.Button2 = New System.Windows.Forms.Button()
+        Me.lstFrom = New System.Windows.Forms.ListBox()
+        Me.lstTo = New System.Windows.Forms.ListBox()
+        Me.btnCalculate2 = New System.Windows.Forms.Button()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Label7 = New System.Windows.Forms.Label()
@@ -37,10 +37,10 @@ Partial Class Design2
         Me.BindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
         Me.ForAss2DataSet = New WindowsApp1.ForAss2DataSet()
         Me.TblRecordTableAdapter = New WindowsApp1.ForAss2DataSetTableAdapters.tblRecordTableAdapter()
-        Me.lstEntries = New System.Windows.Forms.ListBox()
+        Me.lstEntries2 = New System.Windows.Forms.ListBox()
         Me.txtCurrency = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.btnSave = New System.Windows.Forms.Button()
+        Me.btnSave2 = New System.Windows.Forms.Button()
         CType(Me.TblRecordBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.BindingSource1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ForAss2DataSet, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -56,31 +56,31 @@ Partial Class Design2
         Me.Label4.TabIndex = 8
         Me.Label4.Text = "Total"
         '
-        'ListBoxFrom
+        'lstFrom
         '
-        Me.ListBoxFrom.FormattingEnabled = True
-        Me.ListBoxFrom.Location = New System.Drawing.Point(238, 142)
-        Me.ListBoxFrom.Name = "ListBoxFrom"
-        Me.ListBoxFrom.Size = New System.Drawing.Size(120, 56)
-        Me.ListBoxFrom.TabIndex = 10
+        Me.lstFrom.FormattingEnabled = True
+        Me.lstFrom.Location = New System.Drawing.Point(238, 142)
+        Me.lstFrom.Name = "lstFrom"
+        Me.lstFrom.Size = New System.Drawing.Size(120, 56)
+        Me.lstFrom.TabIndex = 10
         '
-        'ListBoxTo
+        'lstTo
         '
-        Me.ListBoxTo.FormattingEnabled = True
-        Me.ListBoxTo.Location = New System.Drawing.Point(426, 142)
-        Me.ListBoxTo.Name = "ListBoxTo"
-        Me.ListBoxTo.Size = New System.Drawing.Size(120, 56)
-        Me.ListBoxTo.TabIndex = 11
+        Me.lstTo.FormattingEnabled = True
+        Me.lstTo.Location = New System.Drawing.Point(426, 142)
+        Me.lstTo.Name = "lstTo"
+        Me.lstTo.Size = New System.Drawing.Size(120, 56)
+        Me.lstTo.TabIndex = 11
         '
-        'Button2
+        'btnCalculate2
         '
-        Me.Button2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button2.Location = New System.Drawing.Point(471, 375)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(75, 23)
-        Me.Button2.TabIndex = 12
-        Me.Button2.Text = "Calculate"
-        Me.Button2.UseVisualStyleBackColor = True
+        Me.btnCalculate2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnCalculate2.Location = New System.Drawing.Point(471, 375)
+        Me.btnCalculate2.Name = "btnCalculate2"
+        Me.btnCalculate2.Size = New System.Drawing.Size(75, 23)
+        Me.btnCalculate2.TabIndex = 12
+        Me.btnCalculate2.Text = "Calculate"
+        Me.btnCalculate2.UseVisualStyleBackColor = True
         '
         'Label5
         '
@@ -129,11 +129,11 @@ Partial Class Design2
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(275, 69)
+        Me.Label1.Location = New System.Drawing.Point(215, 69)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(238, 29)
+        Me.Label1.Size = New System.Drawing.Size(383, 29)
         Me.Label1.TabIndex = 18
-        Me.Label1.Text = "Currency Exchange"
+        Me.Label1.Text = "Currency Exchange (Any to Any)"
         '
         'TblRecordBindingSource
         '
@@ -154,13 +154,13 @@ Partial Class Design2
         '
         Me.TblRecordTableAdapter.ClearBeforeFill = True
         '
-        'lstEntries
+        'lstEntries2
         '
-        Me.lstEntries.FormattingEnabled = True
-        Me.lstEntries.Location = New System.Drawing.Point(650, 69)
-        Me.lstEntries.Name = "lstEntries"
-        Me.lstEntries.Size = New System.Drawing.Size(120, 134)
-        Me.lstEntries.TabIndex = 19
+        Me.lstEntries2.FormattingEnabled = True
+        Me.lstEntries2.Location = New System.Drawing.Point(668, 304)
+        Me.lstEntries2.Name = "lstEntries2"
+        Me.lstEntries2.Size = New System.Drawing.Size(120, 134)
+        Me.lstEntries2.TabIndex = 19
         '
         'txtCurrency
         '
@@ -180,36 +180,36 @@ Partial Class Design2
         Me.Label2.TabIndex = 21
         Me.Label2.Text = "Currency"
         '
-        'btnSave
+        'btnSave2
         '
-        Me.btnSave.Location = New System.Drawing.Point(471, 329)
-        Me.btnSave.Name = "btnSave"
-        Me.btnSave.Size = New System.Drawing.Size(75, 23)
-        Me.btnSave.TabIndex = 22
-        Me.btnSave.Text = "Save"
-        Me.btnSave.UseVisualStyleBackColor = True
+        Me.btnSave2.Location = New System.Drawing.Point(471, 329)
+        Me.btnSave2.Name = "btnSave2"
+        Me.btnSave2.Size = New System.Drawing.Size(75, 23)
+        Me.btnSave2.TabIndex = 22
+        Me.btnSave2.Text = "Save"
+        Me.btnSave2.UseVisualStyleBackColor = True
         '
-        'Form1
+        'Design2
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(800, 450)
-        Me.Controls.Add(Me.btnSave)
+        Me.Controls.Add(Me.btnSave2)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.txtCurrency)
-        Me.Controls.Add(Me.lstEntries)
+        Me.Controls.Add(Me.lstEntries2)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.txtResult)
         Me.Controls.Add(Me.Label7)
         Me.Controls.Add(Me.txtAmount)
         Me.Controls.Add(Me.Label6)
         Me.Controls.Add(Me.Label5)
-        Me.Controls.Add(Me.Button2)
-        Me.Controls.Add(Me.ListBoxTo)
-        Me.Controls.Add(Me.ListBoxFrom)
+        Me.Controls.Add(Me.btnCalculate2)
+        Me.Controls.Add(Me.lstTo)
+        Me.Controls.Add(Me.lstFrom)
         Me.Controls.Add(Me.Label4)
-        Me.Name = "Form1"
-        Me.Text = "Form1"
+        Me.Name = "Design2"
+        Me.Text = "Form2"
         CType(Me.TblRecordBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.BindingSource1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ForAss2DataSet, System.ComponentModel.ISupportInitialize).EndInit()
@@ -218,9 +218,9 @@ Partial Class Design2
 
     End Sub
     Friend WithEvents Label4 As Label
-    Friend WithEvents ListBoxFrom As ListBox
-    Friend WithEvents ListBoxTo As ListBox
-    Friend WithEvents Button2 As Button
+    Friend WithEvents lstFrom As ListBox
+    Friend WithEvents lstTo As ListBox
+    Friend WithEvents btnCalculate2 As Button
     Friend WithEvents Label5 As Label
     Friend WithEvents Label6 As Label
     Friend WithEvents Label7 As Label
@@ -231,8 +231,8 @@ Partial Class Design2
     Friend WithEvents ForAss2DataSet As ForAss2DataSet
     Friend WithEvents TblRecordBindingSource As BindingSource
     Friend WithEvents TblRecordTableAdapter As ForAss2DataSetTableAdapters.tblRecordTableAdapter
-    Friend WithEvents lstEntries As ListBox
+    Friend WithEvents lstEntries2 As ListBox
     Friend WithEvents txtCurrency As TextBox
     Friend WithEvents Label2 As Label
-    Friend WithEvents btnSave As Button
+    Friend WithEvents btnSave2 As Button
 End Class

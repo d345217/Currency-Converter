@@ -22,16 +22,160 @@ Partial Class Design1
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.lstCountries = New System.Windows.Forms.ListBox()
+        Me.txtRate = New System.Windows.Forms.TextBox()
+        Me.txtAmount = New System.Windows.Forms.TextBox()
+        Me.txtTotal = New System.Windows.Forms.TextBox()
+        Me.btnCalculate1 = New System.Windows.Forms.Button()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.lstEntries1 = New System.Windows.Forms.ListBox()
+        Me.btnSave1 = New System.Windows.Forms.Button()
         Me.SuspendLayout()
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Location = New System.Drawing.Point(144, 33)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(416, 29)
+        Me.Label1.TabIndex = 19
+        Me.Label1.Text = "Currency Exchange (Pound to Any)"
+        '
+        'lstCountries
+        '
+        Me.lstCountries.FormattingEnabled = True
+        Me.lstCountries.Location = New System.Drawing.Point(291, 94)
+        Me.lstCountries.Name = "lstCountries"
+        Me.lstCountries.Size = New System.Drawing.Size(120, 43)
+        Me.lstCountries.TabIndex = 20
+        '
+        'txtRate
+        '
+        Me.txtRate.Enabled = False
+        Me.txtRate.Location = New System.Drawing.Point(291, 173)
+        Me.txtRate.Name = "txtRate"
+        Me.txtRate.ReadOnly = True
+        Me.txtRate.Size = New System.Drawing.Size(100, 20)
+        Me.txtRate.TabIndex = 21
+        '
+        'txtAmount
+        '
+        Me.txtAmount.Location = New System.Drawing.Point(291, 227)
+        Me.txtAmount.Name = "txtAmount"
+        Me.txtAmount.Size = New System.Drawing.Size(100, 20)
+        Me.txtAmount.TabIndex = 22
+        '
+        'txtTotal
+        '
+        Me.txtTotal.Enabled = False
+        Me.txtTotal.Location = New System.Drawing.Point(291, 276)
+        Me.txtTotal.Name = "txtTotal"
+        Me.txtTotal.ReadOnly = True
+        Me.txtTotal.Size = New System.Drawing.Size(100, 20)
+        Me.txtTotal.TabIndex = 23
+        '
+        'btnCalculate1
+        '
+        Me.btnCalculate1.Location = New System.Drawing.Point(467, 277)
+        Me.btnCalculate1.Name = "btnCalculate1"
+        Me.btnCalculate1.Size = New System.Drawing.Size(75, 23)
+        Me.btnCalculate1.TabIndex = 24
+        Me.btnCalculate1.Text = "Calculate"
+        Me.btnCalculate1.UseVisualStyleBackColor = True
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Location = New System.Drawing.Point(218, 106)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(43, 13)
+        Me.Label2.TabIndex = 25
+        Me.Label2.Text = "Country"
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Location = New System.Drawing.Point(199, 176)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(86, 13)
+        Me.Label3.TabIndex = 26
+        Me.Label3.Text = "Conversion Rate"
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Location = New System.Drawing.Point(221, 230)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(43, 13)
+        Me.Label4.TabIndex = 27
+        Me.Label4.Text = "Amount"
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.Location = New System.Drawing.Point(225, 282)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(36, 13)
+        Me.Label5.TabIndex = 28
+        Me.Label5.Text = "Total"
+        '
+        'lstEntries1
+        '
+        Me.lstEntries1.FormattingEnabled = True
+        Me.lstEntries1.Location = New System.Drawing.Point(656, 94)
+        Me.lstEntries1.Name = "lstEntries1"
+        Me.lstEntries1.Size = New System.Drawing.Size(120, 95)
+        Me.lstEntries1.TabIndex = 29
+        '
+        'btnSave1
+        '
+        Me.btnSave1.Location = New System.Drawing.Point(467, 227)
+        Me.btnSave1.Name = "btnSave1"
+        Me.btnSave1.Size = New System.Drawing.Size(75, 23)
+        Me.btnSave1.TabIndex = 30
+        Me.btnSave1.Text = "Save"
+        Me.btnSave1.UseVisualStyleBackColor = True
         '
         'Design1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.Controls.Add(Me.btnSave1)
+        Me.Controls.Add(Me.lstEntries1)
+        Me.Controls.Add(Me.Label5)
+        Me.Controls.Add(Me.Label4)
+        Me.Controls.Add(Me.Label3)
+        Me.Controls.Add(Me.Label2)
+        Me.Controls.Add(Me.btnCalculate1)
+        Me.Controls.Add(Me.txtTotal)
+        Me.Controls.Add(Me.txtAmount)
+        Me.Controls.Add(Me.txtRate)
+        Me.Controls.Add(Me.lstCountries)
+        Me.Controls.Add(Me.Label1)
         Me.Name = "Design1"
-        Me.Text = "Design1"
+        Me.Text = "Form2"
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
+
+    Friend WithEvents Label1 As Label
+    Friend WithEvents lstCountries As ListBox
+    Friend WithEvents txtRate As TextBox
+    Friend WithEvents txtAmount As TextBox
+    Friend WithEvents txtTotal As TextBox
+    Friend WithEvents btnCalculate1 As Button
+    Friend WithEvents Label2 As Label
+    Friend WithEvents Label3 As Label
+    Friend WithEvents Label4 As Label
+    Friend WithEvents Label5 As Label
+    Friend WithEvents lstEntries1 As ListBox
+    Friend WithEvents btnSave1 As Button
 End Class
