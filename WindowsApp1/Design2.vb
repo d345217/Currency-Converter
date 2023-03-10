@@ -1,89 +1,49 @@
 ﻿Public Class Design2
     Dim Amount As Double
-    Dim ConversionRate As Double
-    Dim AmountCross As Double
-    Dim ConversionRateCross As Double
-
-    Dim Result As Double
+    Dim Result As Decimal
     Dim Currency As Decimal
+    ReadOnly array(4, 1) As String
     Private Sub Form2_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        lstFrom.Items.Add("United Kingdom")
-        lstFrom.Items.Add("Ukraine")
-        lstFrom.Items.Add("Usa")
-        lstFrom.Items.Add("Euro")
-        lstFrom.Items.Add("Poland")
+        ArrayCreate()
 
-        lstTo.Items.Add("United Kingdom")
-        lstTo.Items.Add("Ukraine")
-        lstTo.Items.Add("Usa")
-        lstTo.Items.Add("Euro")
-        lstTo.Items.Add("Poland")
+        Dim lines() As String = IO.File.ReadAllLines("C:\Users\Владелец\Source\Repos\d345217\Currency-Converter\WindowsApp1\output2.txt")
+        lstEntries2.Items.AddRange(lines)
     End Sub
     Private Sub btnCalculate2_Click(sender As Object, e As EventArgs) Handles btnCalculate2.Click
-        If lstTo.SelectedItem <> lstFrom.SelectedItem Then
+        Calculate(lstFrom.SelectedIndex, lstTo.SelectedIndex)
+        txtResult.Text = Math.Round(Result, 2)
+    End Sub
+    Private Sub ArrayCreate()
+        'adding countries
+        array(0, 0) = "United Kingdom"
+        array(1, 0) = "Ukraine"
+        array(2, 0) = "Usa"
+        array(3, 0) = "Poland"
+        array(4, 0) = "Euro"
+        'adding change rate to Hryvna
+        array(0, 1) = 45.65
+        array(1, 1) = 1
+        array(2, 1) = 36.95
+        array(3, 1) = 8.52
+        array(4, 1) = 40.15
 
-            If lstFrom.SelectedItem = "United Kingdom" Then
-                ConversionRateCross = 45.65
-            End If
-            If lstFrom.SelectedItem = "Ukraine" Then
-                ConversionRateCross = 1
-            End If
-            If lstFrom.SelectedItem = "Usa" Then
-                ConversionRateCross = 36.95
-            End If
-            If lstFrom.SelectedItem = "Euro" Then
-                ConversionRateCross = 40.15
-            End If
-            If lstFrom.SelectedItem = "Poland" Then
-                ConversionRateCross = 8.52
-            End If
-
-            If txtAmount.Text = "" Then
-                MsgBox("Enter the amount you want to convert")
-            Else
-                Try
-                    Amount = txtAmount.Text
-                    AmountCross = Amount * ConversionRateCross
-                Catch
-                    MsgBox("Enter valid amount")
-                End Try
-            End If
-
-            If lstTo.SelectedItem = "United Kingdom" Then
-                ConversionRate = 0.022
-            End If
-            If lstTo.SelectedItem = "Ukraine" Then
-                ConversionRate = 1
-            End If
-            If lstTo.SelectedItem = "Usa" Then
-                ConversionRate = 0.027
-            End If
-            If lstTo.SelectedItem = "Euro" Then
-                ConversionRate = 0.025
-            End If
-            If lstTo.SelectedItem = "Poland" Then
-                ConversionRate = 0.12
-            End If
-
-
-            Result = AmountCross * ConversionRate
-            txtResult.Text = Result
-        Else
-            txtResult.Text = txtAmount.Text
-        End If
+        For i = 0 To 4
+            lstFrom.Items.Add(array(i, 0))
+            lstTo.Items.Add(array(i, 0))
+        Next
+    End Sub
+    Private Sub Calculate(ByRef x As Integer, y As Integer)
+        Amount = txtAmount.Text
+        Result = Amount * array(x, 1) * (1 / array(y, 1))
 
         Currency = Result / Amount
         txtCurrency.Text = Math.Round(Currency, 2)
-
-        Dim lines() As String = IO.File.ReadAllLines("C:\Users\11155882\Source\Repos\d345217\Currency-Converter\WindowsApp1\output2.txt")
-        lstEntries2.Items.AddRange(lines)
     End Sub
-
     Private Sub btnSave2_Click(sender As Object, e As EventArgs) Handles btnSave2.Click
-        lstEntries2.Items.Add(txtAmount.Text + " " + txtCurrency.Text)
+        lstEntries2.Items.Add(lstFrom.SelectedItem + " -> " + lstTo.SelectedItem + ";   " + txtAmount.Text + " => " + txtResult.Text + " " + "(" + txtCurrency.Text + ")")
         Dim file As System.IO.StreamWriter
-        file = My.Computer.FileSystem.OpenTextFileWriter("C:\Users\11155882\Source\Repos\d345217\Currency-Converter\WindowsApp1\output2.txt", True)
-        file.WriteLine(txtCurrency.Text + " " + txtAmount.Text)
+        file = My.Computer.FileSystem.OpenTextFileWriter("C:\Users\Владелец\Source\Repos\d345217\Currency-Converter\WindowsApp1\output2.txt", True)
+        file.WriteLine(lstFrom.SelectedItem + " -> " + lstTo.SelectedItem + ";   " + txtAmount.Text + " => " + txtResult.Text + " " + "(" + txtCurrency.Text + ")")
         file.Close()
     End Sub
 End Class

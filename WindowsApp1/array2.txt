@@ -1,0 +1,6 @@
+﻿Countries_name Rate_To_Hryvna
+United_Kingdom 45.65 
+Ukraine 1
+Usa 36.95
+Poland 8.52
+Euro 40.15
