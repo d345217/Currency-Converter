@@ -1,1 +1,3 @@
-﻿
+﻿United Kingdom -> Usa;   53 => 65,48 (1,24)
+Poland -> United Kingdom;   345 => 64,39 (0,19)
+Ukraine -> Euro;   56 => 1,39 (0,02)

@@ -40,7 +40,7 @@ Partial Class Design1
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(144, 33)
+        Me.Label1.Location = New System.Drawing.Point(37, 42)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(416, 29)
         Me.Label1.TabIndex = 19
@@ -49,7 +49,7 @@ Partial Class Design1
         'lstCountries
         '
         Me.lstCountries.FormattingEnabled = True
-        Me.lstCountries.Location = New System.Drawing.Point(291, 94)
+        Me.lstCountries.Location = New System.Drawing.Point(184, 103)
         Me.lstCountries.Name = "lstCountries"
         Me.lstCountries.Size = New System.Drawing.Size(120, 43)
         Me.lstCountries.TabIndex = 20
@@ -57,7 +57,7 @@ Partial Class Design1
         'txtRate
         '
         Me.txtRate.Enabled = False
-        Me.txtRate.Location = New System.Drawing.Point(291, 173)
+        Me.txtRate.Location = New System.Drawing.Point(184, 182)
         Me.txtRate.Name = "txtRate"
         Me.txtRate.ReadOnly = True
         Me.txtRate.Size = New System.Drawing.Size(100, 20)
@@ -65,7 +65,7 @@ Partial Class Design1
         '
         'txtAmount
         '
-        Me.txtAmount.Location = New System.Drawing.Point(291, 227)
+        Me.txtAmount.Location = New System.Drawing.Point(184, 236)
         Me.txtAmount.Name = "txtAmount"
         Me.txtAmount.Size = New System.Drawing.Size(100, 20)
         Me.txtAmount.TabIndex = 22
@@ -73,7 +73,7 @@ Partial Class Design1
         'txtTotal
         '
         Me.txtTotal.Enabled = False
-        Me.txtTotal.Location = New System.Drawing.Point(291, 276)
+        Me.txtTotal.Location = New System.Drawing.Point(184, 285)
         Me.txtTotal.Name = "txtTotal"
         Me.txtTotal.ReadOnly = True
         Me.txtTotal.Size = New System.Drawing.Size(100, 20)
@@ -81,7 +81,7 @@ Partial Class Design1
         '
         'btnCalculate1
         '
-        Me.btnCalculate1.Location = New System.Drawing.Point(467, 277)
+        Me.btnCalculate1.Location = New System.Drawing.Point(360, 285)
         Me.btnCalculate1.Name = "btnCalculate1"
         Me.btnCalculate1.Size = New System.Drawing.Size(75, 23)
         Me.btnCalculate1.TabIndex = 24
@@ -91,7 +91,7 @@ Partial Class Design1
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(218, 106)
+        Me.Label2.Location = New System.Drawing.Point(111, 115)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(43, 13)
         Me.Label2.TabIndex = 25
@@ -100,7 +100,7 @@ Partial Class Design1
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(199, 176)
+        Me.Label3.Location = New System.Drawing.Point(92, 185)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(86, 13)
         Me.Label3.TabIndex = 26
@@ -109,7 +109,7 @@ Partial Class Design1
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(221, 230)
+        Me.Label4.Location = New System.Drawing.Point(114, 239)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(43, 13)
         Me.Label4.TabIndex = 27
@@ -119,7 +119,7 @@ Partial Class Design1
         '
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.Location = New System.Drawing.Point(225, 282)
+        Me.Label5.Location = New System.Drawing.Point(118, 291)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(36, 13)
         Me.Label5.TabIndex = 28
@@ -128,14 +128,14 @@ Partial Class Design1
         'lstEntries1
         '
         Me.lstEntries1.FormattingEnabled = True
-        Me.lstEntries1.Location = New System.Drawing.Point(656, 94)
+        Me.lstEntries1.Location = New System.Drawing.Point(498, 236)
         Me.lstEntries1.Name = "lstEntries1"
-        Me.lstEntries1.Size = New System.Drawing.Size(120, 95)
+        Me.lstEntries1.Size = New System.Drawing.Size(290, 69)
         Me.lstEntries1.TabIndex = 29
         '
         'btnSave1
         '
-        Me.btnSave1.Location = New System.Drawing.Point(467, 227)
+        Me.btnSave1.Location = New System.Drawing.Point(360, 236)
         Me.btnSave1.Name = "btnSave1"
         Me.btnSave1.Size = New System.Drawing.Size(75, 23)
         Me.btnSave1.TabIndex = 30
