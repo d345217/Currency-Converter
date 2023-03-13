@@ -14,6 +14,10 @@
         lstEntries1.Items.AddRange(lines)
     End Sub
     Private Sub btnCalculate1_Click(sender As Object, e As EventArgs) Handles btnCalculate1.Click
+        If Not ValidateInput() Then
+            Exit Sub
+        End If
+
         Calculate(lstCountries.SelectedIndex)
     End Sub
     Private Sub ArrayCreate()
@@ -38,6 +42,21 @@
         txtTotal.Text = Math.Round(Total, 2)
         txtRate.Text = Math.Round(ConversionRate, 2)
     End Sub
+    Private Function ValidateInput() As Boolean
+        'check if amount is a positive number or exist
+        If Not Double.TryParse(txtAmount.Text, Amount) OrElse Amount < 0 Then
+            MessageBox.Show("Please enter a valid positive number for amount.")
+            Return False
+        End If
+
+        'check if a country have been selected
+        If lstCountries.SelectedIndex = -1 = -1 Then
+            MessageBox.Show("Please select a 'From' and 'To' currency.")
+            Return False
+        End If
+
+        Return True
+    End Function
 
     Private Sub btnSave1_Click(sender As Object, e As EventArgs) Handles btnSave1.Click
         lstEntries1.Items.Add("United Kingdom -> " + lstCountries.SelectedItem + ";   " + txtAmount.Text + " => " + txtTotal.Text + " " + "(" + txtRate.Text + ")")

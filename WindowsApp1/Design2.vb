@@ -15,8 +15,11 @@
         lstEntries2.Items.AddRange(lines)
     End Sub
     Private Sub btnCalculate2_Click(sender As Object, e As EventArgs) Handles btnCalculate2.Click
+        If Not ValidateInput() Then
+            Exit Sub
+        End If
+
         Calculate(lstFrom.SelectedIndex, lstTo.SelectedIndex)
-        txtResult.Text = Math.Round(Result, 2)
     End Sub
     Private Sub ArrayCreate()
         'adding countries
@@ -38,7 +41,23 @@
 
         Currency = Result / Amount
         txtCurrency.Text = Math.Round(Currency, 2)
+        txtResult.Text = Math.Round(Result, 2)
     End Sub
+    Private Function ValidateInput() As Boolean
+        'check if amount is a positive number or exist
+        If Not Double.TryParse(txtAmount.Text, Amount) OrElse Amount < 0 Then
+            MessageBox.Show("Please enter a valid positive number for amount.")
+            Return False
+        End If
+
+        'check if a 'From' and 'To' countries have been selected
+        If lstFrom.SelectedIndex = -1 OrElse lstTo.SelectedIndex = -1 Then
+            MessageBox.Show("Please select a 'From' and 'To' currency.")
+            Return False
+        End If
+
+        Return True
+    End Function
     Private Sub btnSave2_Click(sender As Object, e As EventArgs) Handles btnSave2.Click
         lstEntries2.Items.Add(lstFrom.SelectedItem + " -> " + lstTo.SelectedItem + ";   " + txtAmount.Text + " => " + txtResult.Text + " " + "(" + txtCurrency.Text + ")")
         Dim file As System.IO.StreamWriter
