@@ -10,7 +10,7 @@
             lstCountries.Items.Add(array(i, 0))
         Next
 
-        Dim lines() As String = IO.File.ReadAllLines("C:\Users\Владелец\Source\Repos\d345217\Currency-Converter\WindowsApp1\output1.txt")
+        Dim lines() As String = IO.File.ReadAllLines("C:\Users\11155882\Source\Repos\d345217\Currency-Converter\WindowsApp1\output1.txt")
         lstEntries1.Items.AddRange(lines)
     End Sub
     Private Sub btnCalculate1_Click(sender As Object, e As EventArgs) Handles btnCalculate1.Click
@@ -42,7 +42,7 @@
     Private Sub btnSave1_Click(sender As Object, e As EventArgs) Handles btnSave1.Click
         lstEntries1.Items.Add("United Kingdom -> " + lstCountries.SelectedItem + ";   " + txtAmount.Text + " => " + txtTotal.Text + " " + "(" + txtRate.Text + ")")
         Dim file As System.IO.StreamWriter
-        file = My.Computer.FileSystem.OpenTextFileWriter("C:\Users\Владелец\Source\Repos\d345217\Currency-Converter\WindowsApp1\output1.txt", True)
+        file = My.Computer.FileSystem.OpenTextFileWriter("C:\Users\11155882\Source\Repos\d345217\Currency-Converter\WindowsApp1\output1.txt", True)
         file.WriteLine("United Kingdom -> " + lstCountries.SelectedItem + ";   " + txtAmount.Text + " => " + txtTotal.Text + " " + "(" + txtRate.Text + ")")
         file.Close()
     End Sub

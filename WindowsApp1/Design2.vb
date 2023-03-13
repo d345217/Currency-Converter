@@ -11,7 +11,7 @@
             lstTo.Items.Add(array(i, 0))
         Next
 
-        Dim lines() As String = IO.File.ReadAllLines("C:\Users\Владелец\Source\Repos\d345217\Currency-Converter\WindowsApp1\output2.txt")
+        Dim lines() As String = IO.File.ReadAllLines("C:\Users\11155882\Source\Repos\d345217\Currency-Converter\WindowsApp1\output2.txt")
         lstEntries2.Items.AddRange(lines)
     End Sub
     Private Sub btnCalculate2_Click(sender As Object, e As EventArgs) Handles btnCalculate2.Click
@@ -42,7 +42,7 @@
     Private Sub btnSave2_Click(sender As Object, e As EventArgs) Handles btnSave2.Click
         lstEntries2.Items.Add(lstFrom.SelectedItem + " -> " + lstTo.SelectedItem + ";   " + txtAmount.Text + " => " + txtResult.Text + " " + "(" + txtCurrency.Text + ")")
         Dim file As System.IO.StreamWriter
-        file = My.Computer.FileSystem.OpenTextFileWriter("C:\Users\Владелец\Source\Repos\d345217\Currency-Converter\WindowsApp1\output2.txt", True)
+        file = My.Computer.FileSystem.OpenTextFileWriter("C:\Users\11155882\Source\Repos\d345217\Currency-Converter\WindowsApp1\output2.txt", True)
         file.WriteLine(lstFrom.SelectedItem + " -> " + lstTo.SelectedItem + ";   " + txtAmount.Text + " => " + txtResult.Text + " " + "(" + txtCurrency.Text + ")")
         file.Close()
     End Sub

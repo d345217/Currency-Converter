@@ -128,7 +128,7 @@ Partial Class Design1
         'lstEntries1
         '
         Me.lstEntries1.FormattingEnabled = True
-        Me.lstEntries1.Location = New System.Drawing.Point(498, 103)
+        Me.lstEntries1.Location = New System.Drawing.Point(498, 236)
         Me.lstEntries1.Name = "lstEntries1"
         Me.lstEntries1.Size = New System.Drawing.Size(290, 69)
         Me.lstEntries1.TabIndex = 29
