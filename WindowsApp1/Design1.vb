@@ -59,6 +59,10 @@
     End Function
 
     Private Sub btnSave1_Click(sender As Object, e As EventArgs) Handles btnSave1.Click
+        If Not ValidateInput() Then
+            Exit Sub
+        End If
+
         lstEntries1.Items.Add("United Kingdom -> " + lstCountries.SelectedItem + ";   " + txtAmount.Text + " => " + txtTotal.Text + " " + "(" + txtRate.Text + ")")
         Dim file As System.IO.StreamWriter
         file = My.Computer.FileSystem.OpenTextFileWriter("C:\Users\11155882\Source\Repos\d345217\Currency-Converter\WindowsApp1\output1.txt", True)

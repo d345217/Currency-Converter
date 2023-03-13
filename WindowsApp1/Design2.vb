@@ -59,6 +59,10 @@
         Return True
     End Function
     Private Sub btnSave2_Click(sender As Object, e As EventArgs) Handles btnSave2.Click
+        If Not ValidateInput() Then
+            Exit Sub
+        End If
+
         lstEntries2.Items.Add(lstFrom.SelectedItem + " -> " + lstTo.SelectedItem + ";   " + txtAmount.Text + " => " + txtResult.Text + " " + "(" + txtCurrency.Text + ")")
         Dim file As System.IO.StreamWriter
         file = My.Computer.FileSystem.OpenTextFileWriter("C:\Users\11155882\Source\Repos\d345217\Currency-Converter\WindowsApp1\output2.txt", True)
