@@ -11,8 +11,8 @@
         ArrayCreate()
 
         'filling listboxes with country names
-        For i = 0 To 4
-            lstCountries.Items.Add(array(i, 0))
+        For i = 0 To array.GetLength(0) - 1
+            cmbCountry.Items.Add(array(i, 0))
         Next
 
         'adding history to lstEntries
@@ -28,7 +28,7 @@
             Exit Sub
         End If
 
-        Calculate(lstCountries.SelectedIndex)
+        Calculate(cmbCountry.SelectedIndex)
 
     End Sub
 
@@ -72,7 +72,7 @@
         End If
 
         'check if a country have been selected
-        If lstCountries.SelectedIndex = -1 = -1 Then
+        If cmbCountry.SelectedIndex = -1 = -1 Then
             MessageBox.Show("Please select a 'From' and 'To' currency.")
             Return False
         End If
@@ -89,12 +89,25 @@
             Exit Sub
         End If
 
+
+        'adding info about exchange to listbox
+        lstEntries1.Items.Add("United Kingdom -> " + cmbCountry.SelectedItem + ";   " + txtAmount.Text + " => " + txtTotal.Text + " " + "(" + txtRate.Text + ")")
+
         'creating file which will held history of exchanges
-        lstEntries1.Items.Add("United Kingdom -> " + lstCountries.SelectedItem + ";   " + txtAmount.Text + " => " + txtTotal.Text + " " + "(" + txtRate.Text + ")")
         Dim file As System.IO.StreamWriter
         file = My.Computer.FileSystem.OpenTextFileWriter((IO.Path.Combine(Application.StartupPath, "output1.txt")), True)
-        file.WriteLine("United Kingdom -> " + lstCountries.SelectedItem + ";   " + txtAmount.Text + " => " + txtTotal.Text + " " + "(" + txtRate.Text + ")")
+        file.WriteLine("United Kingdom -> " + cmbCountry.SelectedItem + ";   " + txtAmount.Text + " => " + txtTotal.Text + " " + "(" + txtRate.Text + ")")
         file.Close()
+
+    End Sub
+
+    Private Sub btnReset_Click(sender As Object, e As EventArgs) Handles btnReset.Click
+
+        'clearing all the fields
+        cmbCountry.SelectedIndex = -1
+        txtAmount.Clear()
+        txtRate.Clear()
+        txtTotal.Clear()
 
     End Sub
 

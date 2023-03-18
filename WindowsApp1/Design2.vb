@@ -9,11 +9,12 @@
     Private Sub Form2_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         ArrayCreate()
 
-        'filling listboxes with country names
-        For i = 0 To 4
-            lstFrom.Items.Add(array(i, 0))
-            lstTo.Items.Add(array(i, 0))
+        'filling comboboxes with country names
+        For i = 0 To array.GetLength(0) - 1
+            cmbFrom.Items.Add(array(i, 0))
+            cmbTo.Items.Add(array(i, 0))
         Next
+
 
         'adding history to lstEntries
         Dim lines() As String = IO.File.ReadAllLines(IO.Path.Combine(Application.StartupPath, "output2.txt"))
@@ -27,7 +28,7 @@
             Exit Sub
         End If
 
-        Calculate(lstFrom.SelectedIndex, lstTo.SelectedIndex)
+        Calculate(cmbFrom.SelectedIndex, cmbTo.SelectedIndex)
 
     End Sub
     Private Sub ArrayCreate()
@@ -70,7 +71,7 @@
         End If
 
         'check if a 'From' and 'To' countries have been selected
-        If lstFrom.SelectedIndex = -1 OrElse lstTo.SelectedIndex = -1 Then
+        If cmbFrom.SelectedIndex = -1 OrElse cmbTo.SelectedIndex = -1 Then
             MessageBox.Show("Please select a 'From' and 'To' currency.")
             Return False
         End If
@@ -86,12 +87,36 @@
             Exit Sub
         End If
 
+        'adding info about exchange to listbox
+        lstEntries2.Items.Add(cmbFrom.SelectedItem + " -> " + cmbTo.SelectedItem + ";   " + txtAmount.Text + " => " + txtResult.Text + " " + "(" + txtCurrency.Text + ")")
+
         'creating file which will held history of exchanges
-        lstEntries2.Items.Add(lstFrom.SelectedItem + " -> " + lstTo.SelectedItem + ";   " + txtAmount.Text + " => " + txtResult.Text + " " + "(" + txtCurrency.Text + ")")
         Dim file As System.IO.StreamWriter
         file = My.Computer.FileSystem.OpenTextFileWriter((IO.Path.Combine(Application.StartupPath, "output2.txt")), True)
-        file.WriteLine(lstFrom.SelectedItem + " -> " + lstTo.SelectedItem + ";   " + txtAmount.Text + " => " + txtResult.Text + " " + "(" + txtCurrency.Text + ")")
+        file.WriteLine(cmbFrom.SelectedItem + " -> " + cmbTo.SelectedItem + ";   " + txtAmount.Text + " => " + txtResult.Text + " " + "(" + txtCurrency.Text + ")")
         file.Close()
+
+    End Sub
+
+    Private Sub btnReset_Click(sender As Object, e As EventArgs) Handles btnReset.Click
+
+        'clearing all the fields
+        cmbFrom.SelectedIndex = -1
+        cmbTo.SelectedIndex = -1
+        txtAmount.Clear()
+        txtCurrency.Clear()
+        txtResult.Clear()
+
+    End Sub
+
+    Private Sub btnSwitch_Click(sender As Object, e As EventArgs) Handles btnSwitch.Click
+
+        'switch From and To countries
+        Dim x As String = cmbFrom.SelectedItem
+        Dim y As String = cmbTo.SelectedItem
+
+        cmbFrom.SelectedItem = y
+        cmbTo.SelectedItem = x
 
     End Sub
 

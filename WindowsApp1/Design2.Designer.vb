@@ -24,8 +24,6 @@ Partial Class Design2
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Me.Label4 = New System.Windows.Forms.Label()
-        Me.lstFrom = New System.Windows.Forms.ListBox()
-        Me.lstTo = New System.Windows.Forms.ListBox()
         Me.btnCalculate2 = New System.Windows.Forms.Button()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
@@ -41,6 +39,10 @@ Partial Class Design2
         Me.txtCurrency = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.btnSave2 = New System.Windows.Forms.Button()
+        Me.cmbFrom = New System.Windows.Forms.ComboBox()
+        Me.cmbTo = New System.Windows.Forms.ComboBox()
+        Me.btnReset = New System.Windows.Forms.Button()
+        Me.btnSwitch = New System.Windows.Forms.Button()
         CType(Me.TblRecordBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.BindingSource1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ForAss2DataSet, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -50,34 +52,18 @@ Partial Class Design2
         '
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(128, 370)
+        Me.Label4.Location = New System.Drawing.Point(105, 210)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(36, 13)
         Me.Label4.TabIndex = 8
         Me.Label4.Text = "Total"
         '
-        'lstFrom
-        '
-        Me.lstFrom.FormattingEnabled = True
-        Me.lstFrom.Location = New System.Drawing.Point(72, 132)
-        Me.lstFrom.Name = "lstFrom"
-        Me.lstFrom.Size = New System.Drawing.Size(120, 56)
-        Me.lstFrom.TabIndex = 10
-        '
-        'lstTo
-        '
-        Me.lstTo.FormattingEnabled = True
-        Me.lstTo.Location = New System.Drawing.Point(260, 132)
-        Me.lstTo.Name = "lstTo"
-        Me.lstTo.Size = New System.Drawing.Size(120, 56)
-        Me.lstTo.TabIndex = 11
-        '
         'btnCalculate2
         '
         Me.btnCalculate2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnCalculate2.Location = New System.Drawing.Point(305, 363)
+        Me.btnCalculate2.Location = New System.Drawing.Point(154, 232)
         Me.btnCalculate2.Name = "btnCalculate2"
-        Me.btnCalculate2.Size = New System.Drawing.Size(75, 23)
+        Me.btnCalculate2.Size = New System.Drawing.Size(100, 55)
         Me.btnCalculate2.TabIndex = 12
         Me.btnCalculate2.Text = "Calculate"
         Me.btnCalculate2.UseVisualStyleBackColor = True
@@ -85,7 +71,7 @@ Partial Class Design2
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(69, 116)
+        Me.Label5.Location = New System.Drawing.Point(51, 60)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(30, 13)
         Me.Label5.TabIndex = 13
@@ -94,7 +80,7 @@ Partial Class Design2
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(257, 116)
+        Me.Label6.Location = New System.Drawing.Point(225, 60)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(20, 13)
         Me.Label6.TabIndex = 14
@@ -103,7 +89,7 @@ Partial Class Design2
         'Label7
         '
         Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(128, 327)
+        Me.Label7.Location = New System.Drawing.Point(105, 125)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(43, 13)
         Me.Label7.TabIndex = 16
@@ -111,7 +97,7 @@ Partial Class Design2
         '
         'txtAmount
         '
-        Me.txtAmount.Location = New System.Drawing.Point(177, 323)
+        Me.txtAmount.Location = New System.Drawing.Point(154, 121)
         Me.txtAmount.Name = "txtAmount"
         Me.txtAmount.Size = New System.Drawing.Size(100, 20)
         Me.txtAmount.TabIndex = 15
@@ -119,7 +105,7 @@ Partial Class Design2
         'txtResult
         '
         Me.txtResult.Enabled = False
-        Me.txtResult.Location = New System.Drawing.Point(177, 366)
+        Me.txtResult.Location = New System.Drawing.Point(154, 206)
         Me.txtResult.Name = "txtResult"
         Me.txtResult.ReadOnly = True
         Me.txtResult.Size = New System.Drawing.Size(100, 20)
@@ -127,13 +113,13 @@ Partial Class Design2
         '
         'Label1
         '
-        Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(49, 59)
+        Me.Label1.Location = New System.Drawing.Point(12, 9)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(383, 29)
+        Me.Label1.Size = New System.Drawing.Size(383, 38)
         Me.Label1.TabIndex = 18
         Me.Label1.Text = "Currency Exchange (Any to Any)"
+        Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'TblRecordBindingSource
         '
@@ -157,15 +143,15 @@ Partial Class Design2
         'lstEntries2
         '
         Me.lstEntries2.FormattingEnabled = True
-        Me.lstEntries2.Location = New System.Drawing.Point(483, 281)
+        Me.lstEntries2.Location = New System.Drawing.Point(401, 26)
         Me.lstEntries2.Name = "lstEntries2"
-        Me.lstEntries2.Size = New System.Drawing.Size(305, 108)
+        Me.lstEntries2.Size = New System.Drawing.Size(305, 316)
         Me.lstEntries2.TabIndex = 19
         '
         'txtCurrency
         '
         Me.txtCurrency.Enabled = False
-        Me.txtCurrency.Location = New System.Drawing.Point(177, 281)
+        Me.txtCurrency.Location = New System.Drawing.Point(154, 163)
         Me.txtCurrency.Name = "txtCurrency"
         Me.txtCurrency.ReadOnly = True
         Me.txtCurrency.Size = New System.Drawing.Size(100, 20)
@@ -174,7 +160,7 @@ Partial Class Design2
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(122, 284)
+        Me.Label2.Location = New System.Drawing.Point(99, 166)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(49, 13)
         Me.Label2.TabIndex = 21
@@ -182,18 +168,58 @@ Partial Class Design2
         '
         'btnSave2
         '
-        Me.btnSave2.Location = New System.Drawing.Point(305, 319)
+        Me.btnSave2.Location = New System.Drawing.Point(349, 303)
         Me.btnSave2.Name = "btnSave2"
-        Me.btnSave2.Size = New System.Drawing.Size(75, 23)
+        Me.btnSave2.Size = New System.Drawing.Size(46, 39)
         Me.btnSave2.TabIndex = 22
         Me.btnSave2.Text = "Save"
         Me.btnSave2.UseVisualStyleBackColor = True
+        '
+        'cmbFrom
+        '
+        Me.cmbFrom.FormattingEnabled = True
+        Me.cmbFrom.Location = New System.Drawing.Point(54, 77)
+        Me.cmbFrom.Name = "cmbFrom"
+        Me.cmbFrom.Size = New System.Drawing.Size(121, 21)
+        Me.cmbFrom.TabIndex = 23
+        Me.cmbFrom.Text = "Any"
+        '
+        'cmbTo
+        '
+        Me.cmbTo.FormattingEnabled = True
+        Me.cmbTo.Location = New System.Drawing.Point(228, 77)
+        Me.cmbTo.Name = "cmbTo"
+        Me.cmbTo.Size = New System.Drawing.Size(121, 21)
+        Me.cmbTo.TabIndex = 24
+        Me.cmbTo.Text = "Any"
+        '
+        'btnReset
+        '
+        Me.btnReset.Location = New System.Drawing.Point(154, 293)
+        Me.btnReset.Name = "btnReset"
+        Me.btnReset.Size = New System.Drawing.Size(100, 55)
+        Me.btnReset.TabIndex = 25
+        Me.btnReset.Text = "Reset"
+        Me.btnReset.UseVisualStyleBackColor = True
+        '
+        'btnSwitch
+        '
+        Me.btnSwitch.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
+        Me.btnSwitch.Location = New System.Drawing.Point(190, 77)
+        Me.btnSwitch.Name = "btnSwitch"
+        Me.btnSwitch.Size = New System.Drawing.Size(21, 21)
+        Me.btnSwitch.TabIndex = 26
+        Me.btnSwitch.UseVisualStyleBackColor = True
         '
         'Design2
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.ClientSize = New System.Drawing.Size(722, 355)
+        Me.Controls.Add(Me.btnSwitch)
+        Me.Controls.Add(Me.btnReset)
+        Me.Controls.Add(Me.cmbTo)
+        Me.Controls.Add(Me.cmbFrom)
         Me.Controls.Add(Me.btnSave2)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.txtCurrency)
@@ -205,11 +231,9 @@ Partial Class Design2
         Me.Controls.Add(Me.Label6)
         Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.btnCalculate2)
-        Me.Controls.Add(Me.lstTo)
-        Me.Controls.Add(Me.lstFrom)
         Me.Controls.Add(Me.Label4)
         Me.Name = "Design2"
-        Me.Text = "Form2"
+        Me.Text = "Exchanger"
         CType(Me.TblRecordBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.BindingSource1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ForAss2DataSet, System.ComponentModel.ISupportInitialize).EndInit()
@@ -218,8 +242,6 @@ Partial Class Design2
 
     End Sub
     Friend WithEvents Label4 As Label
-    Friend WithEvents lstFrom As ListBox
-    Friend WithEvents lstTo As ListBox
     Friend WithEvents btnCalculate2 As Button
     Friend WithEvents Label5 As Label
     Friend WithEvents Label6 As Label
@@ -235,4 +257,8 @@ Partial Class Design2
     Friend WithEvents txtCurrency As TextBox
     Friend WithEvents Label2 As Label
     Friend WithEvents btnSave2 As Button
+    Friend WithEvents cmbFrom As ComboBox
+    Friend WithEvents cmbTo As ComboBox
+    Friend WithEvents btnReset As Button
+    Friend WithEvents btnSwitch As Button
 End Class
