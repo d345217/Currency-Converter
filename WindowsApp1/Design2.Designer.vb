@@ -204,7 +204,8 @@ Partial Class Design2
         '
         'btnSwitch
         '
-        Me.btnSwitch.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
+        Me.btnSwitch.BackgroundImage = Global.WindowsApp1.My.Resources.Resources.icon_for_switch
+        Me.btnSwitch.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.btnSwitch.Location = New System.Drawing.Point(190, 77)
         Me.btnSwitch.Name = "btnSwitch"
         Me.btnSwitch.Size = New System.Drawing.Size(21, 21)
