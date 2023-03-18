@@ -16,7 +16,7 @@
         Next
 
         'adding history to lstEntries
-        Dim lines() As String = IO.File.ReadAllLines("C:\Users\11155882\Source\Repos\d345217\Currency-Converter\WindowsApp1\output2.txt")
+        Dim lines() As String = IO.File.ReadAllLines(IO.Path.Combine(Application.StartupPath, "output2.txt"))
         lstEntries2.Items.AddRange(lines)
 
     End Sub
@@ -89,7 +89,7 @@
         'creating file which will held history of exchanges
         lstEntries2.Items.Add(lstFrom.SelectedItem + " -> " + lstTo.SelectedItem + ";   " + txtAmount.Text + " => " + txtResult.Text + " " + "(" + txtCurrency.Text + ")")
         Dim file As System.IO.StreamWriter
-        file = My.Computer.FileSystem.OpenTextFileWriter("C:\Users\11155882\Source\Repos\d345217\Currency-Converter\WindowsApp1\output2.txt", True)
+        file = My.Computer.FileSystem.OpenTextFileWriter((IO.Path.Combine(Application.StartupPath, "output2.txt")), True)
         file.WriteLine(lstFrom.SelectedItem + " -> " + lstTo.SelectedItem + ";   " + txtAmount.Text + " => " + txtResult.Text + " " + "(" + txtCurrency.Text + ")")
         file.Close()
 
