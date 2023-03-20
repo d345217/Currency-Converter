@@ -11,8 +11,8 @@
 
         'filling comboboxes with country names
         For i = 0 To array.GetLength(0) - 1
-            cmbFrom.Items.Add(array(i, 0))
-            cmbTo.Items.Add(array(i, 0))
+            cboFrom.Items.Add(array(i, 0))
+            cboTo.Items.Add(array(i, 0))
         Next
 
 
@@ -28,7 +28,7 @@
             Exit Sub
         End If
 
-        Calculate(cmbFrom.SelectedIndex, cmbTo.SelectedIndex)
+        Calculate(cboFrom.SelectedIndex, cboTo.SelectedIndex)
 
     End Sub
     Private Sub ArrayCreate()
@@ -71,7 +71,7 @@
         End If
 
         'check if a 'From' and 'To' countries have been selected
-        If cmbFrom.SelectedIndex = -1 OrElse cmbTo.SelectedIndex = -1 Then
+        If cboFrom.SelectedIndex = -1 OrElse cboTo.SelectedIndex = -1 Then
             MessageBox.Show("Please select a 'From' and 'To' currency.")
             Return False
         End If
@@ -88,12 +88,12 @@
         End If
 
         'adding info about exchange to listbox
-        lstEntries2.Items.Add(cmbFrom.SelectedItem + " -> " + cmbTo.SelectedItem + ";   " + txtAmount.Text + " => " + txtResult.Text + " " + "(" + txtCurrency.Text + ")")
+        lstEntries2.Items.Add(cboFrom.SelectedItem + " -> " + cboTo.SelectedItem + ";   " + txtAmount.Text + " => " + txtResult.Text + " " + "(" + txtCurrency.Text + ")")
 
         'creating file which will held history of exchanges
         Dim file As System.IO.StreamWriter
         file = My.Computer.FileSystem.OpenTextFileWriter((IO.Path.Combine(Application.StartupPath, "output2.txt")), True)
-        file.WriteLine(cmbFrom.SelectedItem + " -> " + cmbTo.SelectedItem + ";   " + txtAmount.Text + " => " + txtResult.Text + " " + "(" + txtCurrency.Text + ")")
+        file.WriteLine(cboFrom.SelectedItem + " -> " + cboTo.SelectedItem + ";   " + txtAmount.Text + " => " + txtResult.Text + " " + "(" + txtCurrency.Text + ")")
         file.Close()
 
     End Sub
@@ -101,8 +101,8 @@
     Private Sub btnReset_Click(sender As Object, e As EventArgs) Handles btnReset.Click
 
         'clearing all the fields
-        cmbFrom.SelectedIndex = -1
-        cmbTo.SelectedIndex = -1
+        cboFrom.SelectedIndex = -1
+        cboTo.SelectedIndex = -1
         txtAmount.Clear()
         txtCurrency.Clear()
         txtResult.Clear()
@@ -112,11 +112,11 @@
     Private Sub btnSwitch_Click(sender As Object, e As EventArgs) Handles btnSwitch.Click
 
         'switch From and To countries
-        Dim x As String = cmbFrom.SelectedItem
-        Dim y As String = cmbTo.SelectedItem
+        Dim x As String = cboFrom.SelectedItem
+        Dim y As String = cboTo.SelectedItem
 
-        cmbFrom.SelectedItem = y
-        cmbTo.SelectedItem = x
+        cboFrom.SelectedItem = y
+        cboTo.SelectedItem = x
 
     End Sub
 

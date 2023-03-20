@@ -39,8 +39,8 @@ Partial Class Design2
         Me.txtCurrency = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.btnSave2 = New System.Windows.Forms.Button()
-        Me.cmbFrom = New System.Windows.Forms.ComboBox()
-        Me.cmbTo = New System.Windows.Forms.ComboBox()
+        Me.cboFrom = New System.Windows.Forms.ComboBox()
+        Me.cboTo = New System.Windows.Forms.ComboBox()
         Me.btnReset = New System.Windows.Forms.Button()
         Me.btnSwitch = New System.Windows.Forms.Button()
         CType(Me.TblRecordBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -175,23 +175,23 @@ Partial Class Design2
         Me.btnSave2.Text = "Save"
         Me.btnSave2.UseVisualStyleBackColor = True
         '
-        'cmbFrom
+        'cboFrom
         '
-        Me.cmbFrom.FormattingEnabled = True
-        Me.cmbFrom.Location = New System.Drawing.Point(54, 77)
-        Me.cmbFrom.Name = "cmbFrom"
-        Me.cmbFrom.Size = New System.Drawing.Size(121, 21)
-        Me.cmbFrom.TabIndex = 23
-        Me.cmbFrom.Text = "Any"
+        Me.cboFrom.FormattingEnabled = True
+        Me.cboFrom.Location = New System.Drawing.Point(54, 77)
+        Me.cboFrom.Name = "cboFrom"
+        Me.cboFrom.Size = New System.Drawing.Size(121, 21)
+        Me.cboFrom.TabIndex = 23
+        Me.cboFrom.Text = "Any"
         '
-        'cmbTo
+        'cboTo
         '
-        Me.cmbTo.FormattingEnabled = True
-        Me.cmbTo.Location = New System.Drawing.Point(228, 77)
-        Me.cmbTo.Name = "cmbTo"
-        Me.cmbTo.Size = New System.Drawing.Size(121, 21)
-        Me.cmbTo.TabIndex = 24
-        Me.cmbTo.Text = "Any"
+        Me.cboTo.FormattingEnabled = True
+        Me.cboTo.Location = New System.Drawing.Point(228, 77)
+        Me.cboTo.Name = "cboTo"
+        Me.cboTo.Size = New System.Drawing.Size(121, 21)
+        Me.cboTo.TabIndex = 24
+        Me.cboTo.Text = "Any"
         '
         'btnReset
         '
@@ -219,8 +219,8 @@ Partial Class Design2
         Me.ClientSize = New System.Drawing.Size(722, 355)
         Me.Controls.Add(Me.btnSwitch)
         Me.Controls.Add(Me.btnReset)
-        Me.Controls.Add(Me.cmbTo)
-        Me.Controls.Add(Me.cmbFrom)
+        Me.Controls.Add(Me.cboTo)
+        Me.Controls.Add(Me.cboFrom)
         Me.Controls.Add(Me.btnSave2)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.txtCurrency)
@@ -258,8 +258,8 @@ Partial Class Design2
     Friend WithEvents txtCurrency As TextBox
     Friend WithEvents Label2 As Label
     Friend WithEvents btnSave2 As Button
-    Friend WithEvents cmbFrom As ComboBox
-    Friend WithEvents cmbTo As ComboBox
+    Friend WithEvents cboFrom As ComboBox
+    Friend WithEvents cboTo As ComboBox
     Friend WithEvents btnReset As Button
     Friend WithEvents btnSwitch As Button
 End Class
