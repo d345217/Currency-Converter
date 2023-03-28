@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
-Partial Class Design1
+Partial Class frmDesign1
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
@@ -35,6 +35,7 @@ Partial Class Design1
         Me.btnSave1 = New System.Windows.Forms.Button()
         Me.cmbCountry = New System.Windows.Forms.ComboBox()
         Me.btnReset = New System.Windows.Forms.Button()
+        Me.btnChoose = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'Label1
@@ -154,11 +155,21 @@ Partial Class Design1
         Me.btnReset.Text = "Reset"
         Me.btnReset.UseVisualStyleBackColor = True
         '
-        'Design1
+        'btnChoose
+        '
+        Me.btnChoose.Location = New System.Drawing.Point(12, 298)
+        Me.btnChoose.Name = "btnChoose"
+        Me.btnChoose.Size = New System.Drawing.Size(77, 56)
+        Me.btnChoose.TabIndex = 33
+        Me.btnChoose.Text = "Choose another design"
+        Me.btnChoose.UseVisualStyleBackColor = True
+        '
+        'frmDesign1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(629, 360)
+        Me.Controls.Add(Me.btnChoose)
         Me.Controls.Add(Me.btnReset)
         Me.Controls.Add(Me.cmbCountry)
         Me.Controls.Add(Me.btnSave1)
@@ -172,7 +183,7 @@ Partial Class Design1
         Me.Controls.Add(Me.txtAmount)
         Me.Controls.Add(Me.txtRate)
         Me.Controls.Add(Me.Label1)
-        Me.Name = "Design1"
+        Me.Name = "frmDesign1"
         Me.Text = "Exchanger"
         Me.ResumeLayout(False)
         Me.PerformLayout()
@@ -192,4 +203,5 @@ Partial Class Design1
     Friend WithEvents btnSave1 As Button
     Friend WithEvents cmbCountry As ComboBox
     Friend WithEvents btnReset As Button
+    Friend WithEvents btnChoose As Button
 End Class

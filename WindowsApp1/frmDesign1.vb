@@ -1,4 +1,4 @@
-﻿Public Class Design1
+﻿Public Class frmDesign1
 
     'variable validation
     Dim Amount As Double
@@ -111,4 +111,8 @@
 
     End Sub
 
+    Private Sub btnChoose_Click(sender As Object, e As EventArgs) Handles btnChoose.Click
+        Me.Hide()
+        frmChooseDesign.Show()
+    End Sub
 End Class

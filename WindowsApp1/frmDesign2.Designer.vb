@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
-Partial Class Design2
+Partial Class frmDesign2
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
@@ -43,6 +43,7 @@ Partial Class Design2
         Me.cboTo = New System.Windows.Forms.ComboBox()
         Me.btnReset = New System.Windows.Forms.Button()
         Me.btnSwitch = New System.Windows.Forms.Button()
+        Me.btnChoose = New System.Windows.Forms.Button()
         CType(Me.TblRecordBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.BindingSource1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ForAss2DataSet, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -212,11 +213,21 @@ Partial Class Design2
         Me.btnSwitch.TabIndex = 26
         Me.btnSwitch.UseVisualStyleBackColor = True
         '
-        'Design2
+        'btnChoose
+        '
+        Me.btnChoose.Location = New System.Drawing.Point(12, 293)
+        Me.btnChoose.Name = "btnChoose"
+        Me.btnChoose.Size = New System.Drawing.Size(77, 55)
+        Me.btnChoose.TabIndex = 34
+        Me.btnChoose.Text = "Choose another design"
+        Me.btnChoose.UseVisualStyleBackColor = True
+        '
+        'frmDesign2
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(722, 355)
+        Me.Controls.Add(Me.btnChoose)
         Me.Controls.Add(Me.btnSwitch)
         Me.Controls.Add(Me.btnReset)
         Me.Controls.Add(Me.cboTo)
@@ -233,7 +244,7 @@ Partial Class Design2
         Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.btnCalculate2)
         Me.Controls.Add(Me.Label4)
-        Me.Name = "Design2"
+        Me.Name = "frmDesign2"
         Me.Text = "Exchanger"
         CType(Me.TblRecordBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.BindingSource1, System.ComponentModel.ISupportInitialize).EndInit()
@@ -262,4 +273,5 @@ Partial Class Design2
     Friend WithEvents cboTo As ComboBox
     Friend WithEvents btnReset As Button
     Friend WithEvents btnSwitch As Button
+    Friend WithEvents btnChoose As Button
 End Class

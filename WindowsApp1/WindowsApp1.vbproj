@@ -73,10 +73,16 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Design1.Designer.vb">
-      <DependentUpon>Design1.vb</DependentUpon>
+    <Compile Include="frmChooseDesign.Designer.vb">
+      <DependentUpon>frmChooseDesign.vb</DependentUpon>
     </Compile>
-    <Compile Include="Design1.vb">
+    <Compile Include="frmChooseDesign.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDesign1.Designer.vb">
+      <DependentUpon>frmDesign1.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmDesign1.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ForAss2DataSet.Designer.vb">
@@ -84,11 +90,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ForAss2DataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="Design2.vb">
+    <Compile Include="frmDesign2.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Design2.Designer.vb">
-      <DependentUpon>Design2.vb</DependentUpon>
+    <Compile Include="frmDesign2.Designer.vb">
+      <DependentUpon>frmDesign2.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
@@ -109,11 +115,14 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Design1.resx">
-      <DependentUpon>Design1.vb</DependentUpon>
+    <EmbeddedResource Include="frmChooseDesign.resx">
+      <DependentUpon>frmChooseDesign.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Design2.resx">
-      <DependentUpon>Design2.vb</DependentUpon>
+    <EmbeddedResource Include="frmDesign1.resx">
+      <DependentUpon>frmDesign1.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmDesign2.resx">
+      <DependentUpon>frmDesign2.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
