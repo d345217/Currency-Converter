@@ -1,11 +1,5 @@
 ﻿Public Class frmDesign1
 
-    'variable validation
-    Dim Amount As Double
-    Dim Rate As Decimal
-    Dim Result As Decimal
-    ReadOnly array(4, 1) As String
-
     Private Sub frmDesign1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
         ArrayCreate()
