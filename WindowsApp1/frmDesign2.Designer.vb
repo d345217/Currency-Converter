@@ -24,21 +24,21 @@ Partial Class frmDesign2
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Me.Label4 = New System.Windows.Forms.Label()
-        Me.btnCalculate2 = New System.Windows.Forms.Button()
+        Me.btnCalculate = New System.Windows.Forms.Button()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.txtAmount = New System.Windows.Forms.TextBox()
-        Me.txtResult = New System.Windows.Forms.TextBox()
+        Me.txtTotal = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.TblRecordBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.BindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
         Me.ForAss2DataSet = New WindowsApp1.ForAss2DataSet()
         Me.TblRecordTableAdapter = New WindowsApp1.ForAss2DataSetTableAdapters.tblRecordTableAdapter()
-        Me.lstEntries2 = New System.Windows.Forms.ListBox()
-        Me.txtCurrency = New System.Windows.Forms.TextBox()
+        Me.lstEntries = New System.Windows.Forms.ListBox()
+        Me.txtRate = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.btnSave2 = New System.Windows.Forms.Button()
+        Me.btnSave = New System.Windows.Forms.Button()
         Me.cboFrom = New System.Windows.Forms.ComboBox()
         Me.cboTo = New System.Windows.Forms.ComboBox()
         Me.btnReset = New System.Windows.Forms.Button()
@@ -59,15 +59,15 @@ Partial Class frmDesign2
         Me.Label4.TabIndex = 8
         Me.Label4.Text = "Total"
         '
-        'btnCalculate2
+        'btnCalculate
         '
-        Me.btnCalculate2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnCalculate2.Location = New System.Drawing.Point(154, 232)
-        Me.btnCalculate2.Name = "btnCalculate2"
-        Me.btnCalculate2.Size = New System.Drawing.Size(100, 55)
-        Me.btnCalculate2.TabIndex = 12
-        Me.btnCalculate2.Text = "Calculate"
-        Me.btnCalculate2.UseVisualStyleBackColor = True
+        Me.btnCalculate.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnCalculate.Location = New System.Drawing.Point(154, 232)
+        Me.btnCalculate.Name = "btnCalculate"
+        Me.btnCalculate.Size = New System.Drawing.Size(100, 55)
+        Me.btnCalculate.TabIndex = 12
+        Me.btnCalculate.Text = "Calculate"
+        Me.btnCalculate.UseVisualStyleBackColor = True
         '
         'Label5
         '
@@ -103,14 +103,14 @@ Partial Class frmDesign2
         Me.txtAmount.Size = New System.Drawing.Size(100, 20)
         Me.txtAmount.TabIndex = 15
         '
-        'txtResult
+        'txtTotal
         '
-        Me.txtResult.Enabled = False
-        Me.txtResult.Location = New System.Drawing.Point(154, 206)
-        Me.txtResult.Name = "txtResult"
-        Me.txtResult.ReadOnly = True
-        Me.txtResult.Size = New System.Drawing.Size(100, 20)
-        Me.txtResult.TabIndex = 17
+        Me.txtTotal.Enabled = False
+        Me.txtTotal.Location = New System.Drawing.Point(154, 206)
+        Me.txtTotal.Name = "txtTotal"
+        Me.txtTotal.ReadOnly = True
+        Me.txtTotal.Size = New System.Drawing.Size(100, 20)
+        Me.txtTotal.TabIndex = 17
         '
         'Label1
         '
@@ -141,40 +141,40 @@ Partial Class frmDesign2
         '
         Me.TblRecordTableAdapter.ClearBeforeFill = True
         '
-        'lstEntries2
+        'lstEntries
         '
-        Me.lstEntries2.FormattingEnabled = True
-        Me.lstEntries2.Location = New System.Drawing.Point(401, 26)
-        Me.lstEntries2.Name = "lstEntries2"
-        Me.lstEntries2.Size = New System.Drawing.Size(305, 316)
-        Me.lstEntries2.TabIndex = 19
+        Me.lstEntries.FormattingEnabled = True
+        Me.lstEntries.Location = New System.Drawing.Point(401, 26)
+        Me.lstEntries.Name = "lstEntries"
+        Me.lstEntries.Size = New System.Drawing.Size(305, 316)
+        Me.lstEntries.TabIndex = 19
         '
-        'txtCurrency
+        'txtRate
         '
-        Me.txtCurrency.Enabled = False
-        Me.txtCurrency.Location = New System.Drawing.Point(154, 163)
-        Me.txtCurrency.Name = "txtCurrency"
-        Me.txtCurrency.ReadOnly = True
-        Me.txtCurrency.Size = New System.Drawing.Size(100, 20)
-        Me.txtCurrency.TabIndex = 20
+        Me.txtRate.Enabled = False
+        Me.txtRate.Location = New System.Drawing.Point(154, 163)
+        Me.txtRate.Name = "txtRate"
+        Me.txtRate.ReadOnly = True
+        Me.txtRate.Size = New System.Drawing.Size(100, 20)
+        Me.txtRate.TabIndex = 20
         '
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(99, 166)
+        Me.Label2.Location = New System.Drawing.Point(105, 166)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(49, 13)
+        Me.Label2.Size = New System.Drawing.Size(30, 13)
         Me.Label2.TabIndex = 21
-        Me.Label2.Text = "Currency"
+        Me.Label2.Text = "Rate"
         '
-        'btnSave2
+        'btnSave
         '
-        Me.btnSave2.Location = New System.Drawing.Point(349, 303)
-        Me.btnSave2.Name = "btnSave2"
-        Me.btnSave2.Size = New System.Drawing.Size(46, 39)
-        Me.btnSave2.TabIndex = 22
-        Me.btnSave2.Text = "Save"
-        Me.btnSave2.UseVisualStyleBackColor = True
+        Me.btnSave.Location = New System.Drawing.Point(349, 303)
+        Me.btnSave.Name = "btnSave"
+        Me.btnSave.Size = New System.Drawing.Size(46, 39)
+        Me.btnSave.TabIndex = 22
+        Me.btnSave.Text = "Save"
+        Me.btnSave.UseVisualStyleBackColor = True
         '
         'cboFrom
         '
@@ -232,17 +232,17 @@ Partial Class frmDesign2
         Me.Controls.Add(Me.btnReset)
         Me.Controls.Add(Me.cboTo)
         Me.Controls.Add(Me.cboFrom)
-        Me.Controls.Add(Me.btnSave2)
+        Me.Controls.Add(Me.btnSave)
         Me.Controls.Add(Me.Label2)
-        Me.Controls.Add(Me.txtCurrency)
-        Me.Controls.Add(Me.lstEntries2)
+        Me.Controls.Add(Me.txtRate)
+        Me.Controls.Add(Me.lstEntries)
         Me.Controls.Add(Me.Label1)
-        Me.Controls.Add(Me.txtResult)
+        Me.Controls.Add(Me.txtTotal)
         Me.Controls.Add(Me.Label7)
         Me.Controls.Add(Me.txtAmount)
         Me.Controls.Add(Me.Label6)
         Me.Controls.Add(Me.Label5)
-        Me.Controls.Add(Me.btnCalculate2)
+        Me.Controls.Add(Me.btnCalculate)
         Me.Controls.Add(Me.Label4)
         Me.Name = "frmDesign2"
         Me.Text = "Exchanger"
@@ -254,21 +254,21 @@ Partial Class frmDesign2
 
     End Sub
     Friend WithEvents Label4 As Label
-    Friend WithEvents btnCalculate2 As Button
+    Friend WithEvents btnCalculate As Button
     Friend WithEvents Label5 As Label
     Friend WithEvents Label6 As Label
     Friend WithEvents Label7 As Label
     Friend WithEvents txtAmount As TextBox
-    Friend WithEvents txtResult As TextBox
+    Friend WithEvents txtTotal As TextBox
     Friend WithEvents Label1 As Label
     Friend WithEvents BindingSource1 As BindingSource
     Friend WithEvents ForAss2DataSet As ForAss2DataSet
     Friend WithEvents TblRecordBindingSource As BindingSource
     Friend WithEvents TblRecordTableAdapter As ForAss2DataSetTableAdapters.tblRecordTableAdapter
-    Friend WithEvents lstEntries2 As ListBox
-    Friend WithEvents txtCurrency As TextBox
+    Friend WithEvents lstEntries As ListBox
+    Friend WithEvents txtRate As TextBox
     Friend WithEvents Label2 As Label
-    Friend WithEvents btnSave2 As Button
+    Friend WithEvents btnSave As Button
     Friend WithEvents cboFrom As ComboBox
     Friend WithEvents cboTo As ComboBox
     Friend WithEvents btnReset As Button

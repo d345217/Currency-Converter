@@ -2,11 +2,11 @@
 
     'variable validation
     Dim Amount As Double
+    Dim Rate As Decimal
     Dim Result As Decimal
-    Dim Currency As Decimal
     ReadOnly array(4, 1) As String
 
-    Private Sub Form2_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+    Private Sub frmDesign2_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         ArrayCreate()
 
         'filling comboboxes with country names
@@ -18,10 +18,10 @@
 
         'adding history to lstEntries
         Dim lines() As String = IO.File.ReadAllLines(IO.Path.Combine(Application.StartupPath, "output2.txt"))
-        lstEntries2.Items.AddRange(lines)
+        lstEntries.Items.AddRange(lines)
 
     End Sub
-    Private Sub btnCalculate2_Click(sender As Object, e As EventArgs) Handles btnCalculate2.Click
+    Private Sub btnCalculate_Click(sender As Object, e As EventArgs) Handles btnCalculate.Click
 
         'input validation
         If Not ValidateInput() Then
@@ -54,11 +54,11 @@
         'calculations of conversion
         Amount = txtAmount.Text
         Result = Amount * array(x, 1) * (1 / array(y, 1))
-        Currency = Result / Amount
+        Rate = Result / Amount
 
         'output to textbox
-        txtCurrency.Text = Math.Round(Currency, 2)
-        txtResult.Text = Math.Round(Result, 2)
+        txtRate.Text = Math.Round(Rate, 2)
+        txtTotal.Text = Math.Round(Result, 2)
 
     End Sub
 
@@ -80,7 +80,7 @@
 
     End Function
 
-    Private Sub btnSave2_Click(sender As Object, e As EventArgs) Handles btnSave2.Click
+    Private Sub btnSave_Click(sender As Object, e As EventArgs) Handles btnSave.Click
 
         'input validation
         If Not ValidateInput() Then
@@ -88,12 +88,12 @@
         End If
 
         'adding info about exchange to listbox
-        lstEntries2.Items.Add(cboFrom.SelectedItem + " -> " + cboTo.SelectedItem + ";   " + txtAmount.Text + " => " + txtResult.Text + " " + "(" + txtCurrency.Text + ")")
+        lstEntries.Items.Add(cboFrom.SelectedItem + " -> " + cboTo.SelectedItem + ";   " + txtAmount.Text + " => " + txtTotal.Text + " " + "(" + txtRate.Text + ")")
 
         'creating file which will held history of exchanges
         Dim file As System.IO.StreamWriter
         file = My.Computer.FileSystem.OpenTextFileWriter((IO.Path.Combine(Application.StartupPath, "output2.txt")), True)
-        file.WriteLine(cboFrom.SelectedItem + " -> " + cboTo.SelectedItem + ";   " + txtAmount.Text + " => " + txtResult.Text + " " + "(" + txtCurrency.Text + ")")
+        file.WriteLine(cboFrom.SelectedItem + " -> " + cboTo.SelectedItem + ";   " + txtAmount.Text + " => " + txtTotal.Text + " " + "(" + txtRate.Text + ")")
         file.Close()
 
     End Sub
@@ -104,8 +104,8 @@
         cboFrom.SelectedIndex = -1
         cboTo.SelectedIndex = -1
         txtAmount.Clear()
-        txtCurrency.Clear()
-        txtResult.Clear()
+        txtRate.Clear()
+        txtTotal.Clear()
 
     End Sub
 
@@ -119,8 +119,13 @@
         cboTo.SelectedItem = x
 
     End Sub
+
     Private Sub btnChoose_Click(sender As Object, e As EventArgs) Handles btnChoose.Click
+
+        'moving user to the Choosing design form
         Me.Hide()
         frmChooseDesign.Show()
+
     End Sub
+
 End Class

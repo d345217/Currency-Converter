@@ -26,13 +26,13 @@ Partial Class frmDesign1
         Me.txtRate = New System.Windows.Forms.TextBox()
         Me.txtAmount = New System.Windows.Forms.TextBox()
         Me.txtTotal = New System.Windows.Forms.TextBox()
-        Me.btnCalculate1 = New System.Windows.Forms.Button()
+        Me.btnCalculate = New System.Windows.Forms.Button()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
-        Me.lstEntries1 = New System.Windows.Forms.ListBox()
-        Me.btnSave1 = New System.Windows.Forms.Button()
+        Me.lstEntries = New System.Windows.Forms.ListBox()
+        Me.btnSave = New System.Windows.Forms.Button()
         Me.cmbCountry = New System.Windows.Forms.ComboBox()
         Me.btnReset = New System.Windows.Forms.Button()
         Me.btnChoose = New System.Windows.Forms.Button()
@@ -73,15 +73,15 @@ Partial Class frmDesign1
         Me.txtTotal.Size = New System.Drawing.Size(120, 20)
         Me.txtTotal.TabIndex = 23
         '
-        'btnCalculate1
+        'btnCalculate
         '
-        Me.btnCalculate1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnCalculate1.Location = New System.Drawing.Point(95, 236)
-        Me.btnCalculate1.Name = "btnCalculate1"
-        Me.btnCalculate1.Size = New System.Drawing.Size(120, 56)
-        Me.btnCalculate1.TabIndex = 24
-        Me.btnCalculate1.Text = "Calculate"
-        Me.btnCalculate1.UseVisualStyleBackColor = True
+        Me.btnCalculate.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnCalculate.Location = New System.Drawing.Point(95, 236)
+        Me.btnCalculate.Name = "btnCalculate"
+        Me.btnCalculate.Size = New System.Drawing.Size(120, 56)
+        Me.btnCalculate.TabIndex = 24
+        Me.btnCalculate.Text = "Calculate"
+        Me.btnCalculate.UseVisualStyleBackColor = True
         '
         'Label2
         '
@@ -120,22 +120,22 @@ Partial Class frmDesign1
         Me.Label5.TabIndex = 28
         Me.Label5.Text = "Total"
         '
-        'lstEntries1
+        'lstEntries
         '
-        Me.lstEntries1.FormattingEnabled = True
-        Me.lstEntries1.Location = New System.Drawing.Point(323, 12)
-        Me.lstEntries1.Name = "lstEntries1"
-        Me.lstEntries1.Size = New System.Drawing.Size(290, 342)
-        Me.lstEntries1.TabIndex = 29
+        Me.lstEntries.FormattingEnabled = True
+        Me.lstEntries.Location = New System.Drawing.Point(323, 12)
+        Me.lstEntries.Name = "lstEntries"
+        Me.lstEntries.Size = New System.Drawing.Size(290, 342)
+        Me.lstEntries.TabIndex = 29
         '
-        'btnSave1
+        'btnSave
         '
-        Me.btnSave1.Location = New System.Drawing.Point(242, 331)
-        Me.btnSave1.Name = "btnSave1"
-        Me.btnSave1.Size = New System.Drawing.Size(75, 23)
-        Me.btnSave1.TabIndex = 30
-        Me.btnSave1.Text = "Save"
-        Me.btnSave1.UseVisualStyleBackColor = True
+        Me.btnSave.Location = New System.Drawing.Point(242, 331)
+        Me.btnSave.Name = "btnSave"
+        Me.btnSave.Size = New System.Drawing.Size(75, 23)
+        Me.btnSave.TabIndex = 30
+        Me.btnSave.Text = "Save"
+        Me.btnSave.UseVisualStyleBackColor = True
         '
         'cmbCountry
         '
@@ -172,13 +172,13 @@ Partial Class frmDesign1
         Me.Controls.Add(Me.btnChoose)
         Me.Controls.Add(Me.btnReset)
         Me.Controls.Add(Me.cmbCountry)
-        Me.Controls.Add(Me.btnSave1)
-        Me.Controls.Add(Me.lstEntries1)
+        Me.Controls.Add(Me.btnSave)
+        Me.Controls.Add(Me.lstEntries)
         Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Label2)
-        Me.Controls.Add(Me.btnCalculate1)
+        Me.Controls.Add(Me.btnCalculate)
         Me.Controls.Add(Me.txtTotal)
         Me.Controls.Add(Me.txtAmount)
         Me.Controls.Add(Me.txtRate)
@@ -194,13 +194,13 @@ Partial Class frmDesign1
     Friend WithEvents txtRate As TextBox
     Friend WithEvents txtAmount As TextBox
     Friend WithEvents txtTotal As TextBox
-    Friend WithEvents btnCalculate1 As Button
+    Friend WithEvents btnCalculate As Button
     Friend WithEvents Label2 As Label
     Friend WithEvents Label3 As Label
     Friend WithEvents Label4 As Label
     Friend WithEvents Label5 As Label
-    Friend WithEvents lstEntries1 As ListBox
-    Friend WithEvents btnSave1 As Button
+    Friend WithEvents lstEntries As ListBox
+    Friend WithEvents btnSave As Button
     Friend WithEvents cmbCountry As ComboBox
     Friend WithEvents btnReset As Button
     Friend WithEvents btnChoose As Button
